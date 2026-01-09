@@ -47,20 +47,23 @@ class Wallet {
         if (amount > balance) {
             System.out.println("Insufficient balance! Payment failed.");
             balance -= amount;
-            return True;
+            return ;
         }
         System.out.println(amount + " paid. Remaining balance = " + balance);
-
         addTransaction("DEBIT", amount);
     }
+
     // Check Balance
     public void checkBalance() {
         System.out.println("Current balance = " + balance);
     }
+
     // Add Transaction
     private void addTransaction(String type, double amount) {
         if (transactionCount >= transactions.length) {
-            increaseSize();
+            System.out.println("Transaction limit reached.");
+            return;
+//            increaseSize();
         }
         Transaction t=new Transaction(amount,type,balance);
         transactions[transactionCount] = t;
