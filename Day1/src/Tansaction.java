@@ -1,6 +1,6 @@
 import java.time.LocalDateTime;
 
-class Transaction {
+public class Transaction {
     private static int counter=1;
     private double amount;
     private String type;
@@ -8,15 +8,6 @@ class Transaction {
     private String note;
     private int tId = 1;
     private LocalDateTime  createdAt;
-
-    public Transaction(double amount, String type, double balance, String note) {
-        this.amount = amount;
-        this.type = type;
-        this.balance = balance;
-        this.note = note;
-        tId++;
-        createdAt= LocalDateTime.now();
-    }
 
     public Transaction(double amount, String type,double balance) {
         this.amount = amount;
